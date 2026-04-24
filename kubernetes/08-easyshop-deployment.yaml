@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: easyshop
-          image: harsh9308/easy-shop:7f17d95
+          image: harsh9308/easy-shop:52238e7
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

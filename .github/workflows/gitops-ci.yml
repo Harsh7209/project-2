@@ -30,9 +30,6 @@ jobs:
           node-version: '20' # Use your preferred Node version
           cache: 'npm'  
 
-      - name: Build with Maven
-        run: ./mvnw clean package -DskipTests -B
-
       - name: Install Dependencies
         run: npm ci
 

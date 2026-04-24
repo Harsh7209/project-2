@@ -13,7 +13,8 @@ permissions:
   contents: write
 
 env:
-  DOCKERHUB_REPO: harsh9308/easy-shop
+  DOCKERHUB_REPO-1: harsh9308/easy-shop
+  DOCKERHUB_REPO-2: harsh9308/easy-shop-migration
 
 jobs:
   build-and-push:
@@ -56,22 +57,22 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.DOCKERHUB_REPO }}:latest
-            ${{ env.DOCKERHUB_REPO }}:${{ steps.tag.outputs.sha_short }}
+            ${{ env.DOCKERHUB_REPO-1 }}:latest
+            ${{ env.DOCKERHUB_REPO-1 }}:${{ steps.tag.outputs.sha_short }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
 
 
-      - name: Build and Push Docker image
+      - name: Build and Push Docker migration image
         uses: docker/build-push-action@v6
         with:
           context: .
           file: scripts/Dockerfile.migration
           push: true
           tags: |
-            ${{ env.DOCKERHUB_REPO }}:latest
-            ${{ env.DOCKERHUB_REPO }}:${{ steps.tag.outputs.sha_short }}
+            ${{ env.DOCKERHUB_REPO-2 }}:latest
+            ${{ env.DOCKERHUB_REPO-2 }}:${{ steps.tag.outputs.sha_short }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: easyshop
-          image: trainwithshubham/easyshop-app:1
+          image: harsh9308/easy-shop:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

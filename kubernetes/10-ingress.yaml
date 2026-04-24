@@ -14,7 +14,7 @@ spec:
 
     secretName: easyshop-tls-secret  # Cert-Manager will manage this
   rules:
-  - host: easyshop.letsdeployit.com
+  - host:  52.33.194.119.nip.io
     http:
       paths:
       - path: /

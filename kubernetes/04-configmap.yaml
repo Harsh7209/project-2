@@ -7,7 +7,8 @@ data:
   MONGODB_URI: "mongodb://mongodb-service:27017/easyshop"
   NODE_ENV: "production"
   NEXT_PUBLIC_API_URL: "https://52.33.194.119.nip.io/api" # connecting frontend to backend using the public  address of load balancer .
-  #the public address of load balancer we got by (nslookup <url of ingress or gateway load balancer>) command.
+  #the public address of load balancer we got by (nslookup <url of ingress or gateway load balancer>) command. because in ingress we have hostname of same ip as this.
+  # And in https://52.33.194.119.nip.io/api /api redirects to backend . i.e connect frontend to backend..
   NEXTAUTH_URL: "https://52.33.194.119.nip.io/" # same as above comment
   NEXTAUTH_SECRET: "HmaFjYZ2jbUK7Ef+wZrBiJei4ZNGBAJ5IdiOGAyQegw="
   JWT_SECRET: "e5e425764a34a2117ec2028bd53d6f1388e7b90aeae9fa7735f2469ea3a6cc8c"
